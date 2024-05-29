@@ -2,17 +2,16 @@ name: setup-react
 
 on: workflow_dispatch
 jobs:
-  app-react
+  app-react:
      runs-on: ubuntu-latest
      steps: 
-     -name: code checkout
+     -name: Code Checkout
       uses: actions/checkout@v4
-     -name: install nodejs
+     -name: Install nodejs
       uses: actions/setup-node@v4
       with:
-      node-version: '20'
-     -name:Install Dependencies
+        node-version: '20'
+     -name: Install Dependencies
       run: npm ci
      -name: Deploy
       run: echo "Deploy Successful"
-      
