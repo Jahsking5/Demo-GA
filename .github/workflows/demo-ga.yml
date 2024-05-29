@@ -5,26 +5,26 @@ jobs:
   app-react:
     runs-on: ubuntu-latest
     steps: 
-      -name: Code CheckOut
-      uses: actions/checkout@v4
+    -name: Code CheckOut
+     uses: actions/checkout@v4
     -name: Install nodejs
-       uses:actions/setup-node@v4
-       with:
-         node-version: '20'
-      -name: Install Dependencies
-       run: npm ci
-      -name: Deploy
-       run: echo "Deploy Successful"
- Second-job
+     uses:actions/setup-node@v4
+     with:
+        node-version: '20'
+    -name: Install Dependencies
+     run: npm ci
+    -name: Deploy
+     run: echo "Deploy Successful"
+  Second-job
     runs-on: ubuntu-latest
     steps: 
-      -name: Code CheckOut
-       uses: actions/checkout@v4
-      -name: Install Apache2
-       run: |
+    -name: Code CheckOut
+     uses: actions/checkout@v4
+    -name: Install Apache2
+     run: |
          sudo apt update
          sudo apt install Apache2 -y
-      -name: List Directory Structure
-       run: ls -l
-      needs:
+     -name: List Directory Structure
+      run: ls -l
+     needs:
        app-react
