@@ -5,7 +5,7 @@ jobs:
   app-react:
      runs-on: ubuntu-latest
      steps: 
-     -name: Code Checkout
+     -name: Code CheckOut
       uses: actions/checkout@v4
      -name: Install nodejs
       uses: actions/setup-node@v4
